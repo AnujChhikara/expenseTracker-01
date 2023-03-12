@@ -2,7 +2,7 @@ import "./App.css";
 import ExpenseItem from "./components/ExpenseItem";
 import NewExpense from "./components/NewExpense/NewExpense";
 import { useState } from "react";
-
+import ExpenseChart from "./components/ExpenseChart";
 function App() {
   const [data, setData] = useState([]);
 
@@ -28,6 +28,9 @@ function App() {
       </div>
       <div>
         <NewExpense onAddExpense={addExpenseHandler} />
+      </div>
+      <div className="flex justify-center">
+        <ExpenseChart expenses={data} />
       </div>
 
       <div className="mt-4 mx-2 space-y-3 ">{Items}</div>
